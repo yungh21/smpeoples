@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에스엠피플스(주) | Security Managing Peoples</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              primary: '#0284c7',
+              navy: '#090d16',
+              card: '#0f172a',
+              cardHover: '#131e36',
+              accent: '#38bdf8'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070b13;
+      color: #e2e8f0;
+      font-family: 'Pretendard', sans-serif;
+      overflow-x: hidden;
+    }
+    .mesh-gradient {
+      background: radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 85% 60%, rgba(2, 132, 199, 0.1) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+    }
+    .glass-nav {
+      background: rgba(7, 11, 19, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .cyber-card {
+      background: linear-gradient(180deg, rgba(23, 37, 84, 0.25) 0%, rgba(15, 23, 42, 0.6) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cyber-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -12px rgba(6, 182, 212, 0.15);
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+  <!-- ================= GNB / HEADER ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+          <i data-lucide="shield-check" class="w-6 h-6 text-white stroke-[2.2]"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl font-extrabold tracking-tight text-white font-mono">SMPeoples</span>
+            <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/70">Corp</span>
+          </div>
+          <span class="text-[11px] text-slate-400 font-medium tracking-tighter">에스엠피플스(주)</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#company" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Company</a>
+        <a href="#organization" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Organization</a>
+        <a href="#partners" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+        <a href="#solutions" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Solutions</a>
+        <a href="#global" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Global & Track Record</a>
+        <a href="#certifications" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Certificates</a>
+        <a href="#news" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Tech News</a>
+        <a href="#location" class="text-slate-300 hover:text-cyan-400 transition-colors duration-200">Location</a>
+      </nav>
+
+      <!-- CTA BUTTON & MOBILE TOGGLE -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-sm transition-all duration-300 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40">
+          <span>견적 / 기술문의</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white focus:outline-none">
+          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-[#090e18] px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col gap-4 text-base font-medium">
+        <a href="#company" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Company (회사소개)</a>
+        <a href="#organization" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Organization (조직 및 인력)</a>
+        <a href="#partners" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Partners (파트너사)</a>
+        <a href="#solutions" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Solutions (사업분야)</a>
+        <a href="#global" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Global & Track Record (국내외 실적)</a>
+        <a href="#certifications" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Certificates (인증현황)</a>
+        <a href="#news" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Tech News (최신 기술 동향)</a>
+        <a href="#location" class="mobile-nav-link text-slate-200 hover:text-cyan-400 py-1">Location (오시는길)</a>
+        <a href="#contact" class="mobile-nav-link inline-flex items-center justify-center gap-2 mt-2 px-4 py-3 rounded-lg bg-cyan-600 text-white font-semibold">
+          <span>견적 / 고객문의 바로가기</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-5 sm:px-8 mesh-gradient border-b border-slate-800/50">
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      
+      <!-- Tech Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs sm:text-sm font-medium mb-8 backdrop-blur-sm shadow-inner shadow-cyan-500/10">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>고객의 가치를 창조하는 기업 • 에스엠피플스(주)</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight sm:leading-tight mb-6">
+        Security를 Managing하는 Peoples,<br>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300">
+          에스엠피플스 주식회사
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-10">
+        다양한 고객의 정보자산 및 데이터 보안에 최선을 다하며, 최고의 전문성과 최신의 기술력으로 비즈니스의 성공적인 발전에 기여합니다.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm tracking-wide transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+          <span>핵심 사업분야 보기</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#global" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+          <span>글로벌 & 사업 실적</span>
+          <i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i>
+        </a>
+      </div>
+
+      <!-- Highlights Micro Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-800/80 text-left">
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-xs text-slate-400 mb-1">전문 엔지니어 비율</div>
+          <div class="text-lg font-bold text-cyan-400">90% 이상</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">고급 이상 PM 및 전담 연구소</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-xs text-slate-400 mb-1">연간 매출 규모</div>
+          <div class="text-lg font-bold text-cyan-400">약 80억원</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">안정적 재무 및 기술 신인도</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-xs text-slate-400 mb-1">고객사 유지보수</div>
+          <div class="text-lg font-bold text-cyan-400">100+ 고객사</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">공공/금융/국방/민간 부문</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-xs text-slate-400 mb-1">글로벌 ODA 사업</div>
+          <div class="text-lg font-bold text-cyan-400">KOICA · EDCF</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">8개국 이상 글로벌 인프라 수행</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPANY OVERVIEW ================= -->
+  <section id="company" class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-12 lg:items-center justify-between">
+        <div class="lg:w-1/2">
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-3">
+            <i data-lucide="building-2" class="w-4 h-4"></i> About SMPeoples
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6 leading-tight">
+            뿌리가 튼튼한 나무처럼,<br>
+            <span class="text-cyan-400">언제나 푸른 열매로 보답합니다</span>
+          </h2>
+          <p class="text-slate-300 leading-relaxed mb-5 font-normal">
+            21세기 정보화시대 변화의 물결에 대응하기 위해 끊임없는 발전에 힘쓰고 있습니다. 지속적인 기술 발전을 위한 노력에 전념하여 세계로 뻗어 나가고, 점차 진보되는 고객의 환경에 발맞추어 성공적인 사업을 수행, 유지하는 좋은 파트너가 되겠습니다.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8 text-sm">
+            뿌리가 튼튼한 나무는 바람에 흔들리더라도 절대 쓰러지지 않는 것처럼, 한 계절 피고 지는 화려한 꽃보다는 늘 푸른 가지로 사람들의 쉼터를 만들고 알찬 열매로 보답하는 회사가 되도록 에스엠피플스 임직원 모두가 최선을 다하겠습니다.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="shield-check" class="w-5 h-5 text-cyan-400 mb-2"></i>
+              <h4 class="text-white font-semibold text-sm">One-Stop Service</h4>
+              <p class="text-xs text-slate-400 mt-1">컨설팅 - 구축 - 유지보수 통합 매니지먼트</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+              <i data-lucide="users" class="w-5 h-5 text-sky-400 mb-2"></i>
+              <h4 class="text-white font-semibold text-sm">엔지니어 중심 인력</h4>
+              <p class="text-xs text-slate-400 mt-1">고급 이상 PM 및 특급 엔지니어 전진 배치</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-5/12">
+          <div class="cyber-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+            <div class="text-xs font-mono text-cyan-400 mb-2">CORPORATE PROFILE</div>
+            <h3 class="text-xl font-bold text-white mb-6">에스엠피플스 주식회사 기업 개요</h3>
+            
+            <dl class="space-y-3.5 text-sm divide-y divide-slate-800/80">
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">회사명</dt>
+                <dd class="text-slate-100 font-medium text-right">에스엠피플스 주식회사 (SMPEOPLES Co., Ltd.)</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">대표이사</dt>
+                <dd class="text-cyan-400 font-semibold text-right">최 정 수</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">설립시기</dt>
+                <dd class="text-slate-100 font-medium text-right">2019년 7월</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">매출액</dt>
+                <dd class="text-slate-100 font-medium text-right">약 80억원</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">임직원 수</dt>
+                <dd class="text-slate-100 font-medium text-right">23명 (전문 엔지니어 비율 90%)</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">사업분야</dt>
+                <dd class="text-slate-300 font-medium text-right text-xs">IT보안 H/W & S/W 판매/유통, IT기반 설계/구축, System 유지보수</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">본사 소재지</dt>
+                <dd class="text-slate-300 font-medium text-right text-xs">경기 고양시 덕양구 청초로 66 B동 1619, 1607호 (덕은리버워크)</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">대전지사</dt>
+                <dd class="text-slate-300 font-medium text-right text-xs">대전시 대덕구 대화로 120 가온비즈타워 1124호</dd>
+              </div>
+              <div class="pt-2.5 flex justify-between items-start gap-4">
+                <dt class="text-slate-400 flex-shrink-0">연락처</dt>
+                <dd class="text-cyan-400 font-mono text-right text-xs">Tel. 0505-055-1210 / Fax. 0505-65-1210</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ORGANIZATION & PERSONNEL ================= -->
+  <section id="organization" class="py-24 px-5 sm:px-8 bg-slate-950/70 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="sitemap" class="w-4 h-4"></i> Organization & Engineers
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          조직 및 인원 현황
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          전사 인원의 90%가 전문 엔지니어로 구성되어 있으며, 서울본사와 대전지사를 연계 운영하여 무결점 기술지원을 제공합니다.
+        </p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
+        <div class="cyber-card rounded-2xl p-5 text-center">
+          <div class="text-xs text-slate-400 mb-1">특급 기술자</div>
+          <div class="text-3xl font-extrabold text-cyan-400 font-mono">5<span class="text-sm font-normal text-slate-400 ml-1">명</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">대규모 PM 수행</div>
+        </div>
+        <div class="cyber-card rounded-2xl p-5 text-center">
+          <div class="text-xs text-slate-400 mb-1">고급 기술자</div>
+          <div class="text-3xl font-extrabold text-sky-400 font-mono">2<span class="text-sm font-normal text-slate-400 ml-1">명</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">인프라 아키텍처</div>
+        </div>
+        <div class="cyber-card rounded-2xl p-5 text-center">
+          <div class="text-xs text-slate-400 mb-1">중급 기술자</div>
+          <div class="text-3xl font-extrabold text-blue-400 font-mono">4<span class="text-sm font-normal text-slate-400 ml-1">명</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">네트워크·보안 구축</div>
+        </div>
+        <div class="cyber-card rounded-2xl p-5 text-center">
+          <div class="text-xs text-slate-400 mb-1">초급 기술자</div>
+          <div class="text-3xl font-extrabold text-indigo-400 font-mono">9<span class="text-sm font-normal text-slate-400 ml-1">명</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">상시 유지보수 운영</div>
+        </div>
+        <div class="cyber-card rounded-2xl p-5 text-center">
+          <div class="text-xs text-slate-400 mb-1">기타 (경영/지원)</div>
+          <div class="text-3xl font-extrabold text-slate-300 font-mono">3<span class="text-sm font-normal text-slate-400 ml-1">명</span></div>
+          <div class="text-[11px] text-slate-400 mt-1">전략 및 품질관리</div>
+        </div>
+        <div class="cyber-card rounded-2xl p-5 text-center border-cyan-500/40 bg-cyan-950/20">
+          <div class="text-xs text-cyan-300 mb-1 font-semibold">총 임직원 합계</div>
+          <div class="text-3xl font-extrabold text-white font-mono">23<span class="text-sm font-normal text-cyan-300 ml-1">명</span></div>
+          <div class="text-[11px] text-cyan-400 mt-1">엔지니어 비중 90%</div>
+        </div>
+      </div>
+
+      <!-- Organizational Chart Display -->
+      <div class="cyber-card rounded-2xl p-8">
+        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+          <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i> 에스엠피플스 조직 체계도
+        </h3>
+
+        <div class="space-y-6">
+          <!-- Top Level: CEO -->
+          <div class="flex justify-center">
+            <div class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-600 text-white font-bold text-center shadow-lg shadow-cyan-500/20">
+              <span class="text-xs text-cyan-200 block font-mono">CHIEF EXECUTIVE OFFICER</span>
+              <span class="text-lg">대표이사</span>
+            </div>
+          </div>
+
+          <!-- Connecting Line -->
+          <div class="w-0.5 h-6 bg-slate-700 mx-auto"></div>
+
+          <!-- Headquarters Depts -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="text-xs font-mono text-cyan-400 mb-1">HQ DEPARTMENT</div>
+              <h4 class="text-base font-bold text-white mb-3">경영지원본부</h4>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 영업지원팀</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 재무 및 경영기획</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="text-xs font-mono text-cyan-400 mb-1">HQ DEPARTMENT</div>
+              <h4 class="text-base font-bold text-white mb-3">컨설팅사업부</h4>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 영업팀 (공공/금융/기업)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 보안 컴플라이언스 컨설팅</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="text-xs font-mono text-cyan-400 mb-1">HQ DEPARTMENT</div>
+              <h4 class="text-base font-bold text-white mb-3">서비스사업부</h4>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 기술지원 1팀</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 기술지원 2팀</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 기술지원 3팀</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <div class="text-xs font-mono text-cyan-400 mb-1">R&D CENTER</div>
+              <h4 class="text-base font-bold text-white mb-3">전담연구부서</h4>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 기업부설연구소 (과기부)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 보안 신기술 연구 및 개발</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Branch Section -->
+          <div class="pt-6 border-t border-slate-800">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="px-2.5 py-1 rounded bg-sky-950 text-sky-400 text-xs font-bold border border-sky-800">BRANCH</span>
+              <h4 class="text-base font-bold text-white">대전지사 조직 구성</h4>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="font-semibold text-white text-sm mb-1">컨설팅사업부 (중부권)</div>
+                <p class="text-xs text-slate-400">중부권 공공기관 및 지자체 보안 시스템 제안·영업</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="font-semibold text-white text-sm mb-1">서비스사업부 (기술지원 1팀, 2팀, 3팀)</div>
+                <p class="text-xs text-slate-400">현장 밀착형 장애 긴급 대응 및 24/365 안정적 유지보수 수행</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BUSINESS MODEL (PPT REF) ================= -->
+  <section class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="layers" class="w-4 h-4"></i> Business Architecture
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          에스엠피플스 3대 비즈니스 모델
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          IT 전반에 대한 구축과 보안을 아우르는 최상의 ONE-STOP Service 체계
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Axis 1 -->
+        <div class="cyber-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-cyan-950/80 border border-cyan-800/50 flex items-center justify-center mb-6">
+              <i data-lucide="shield-alert" class="w-7 h-7 text-cyan-400"></i>
+            </div>
+            <div class="text-xs font-mono text-cyan-400 mb-1">MODEL 01</div>
+            <h3 class="text-xl font-bold text-white mb-3">IT & 보안 컨설팅</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              고객 환경에 최적화된 컴플라이언스 준수 및 침해위협 예방 전략 수립.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 취약점 진단 및 모의해킹 (Web, App, IoT, Cloud)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> ISMS, ISMS-P, ISO 27001 심사 지원</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> KISA 클라우드서비스 보안인증(CSAP: IaaS, SaaS, DaaS)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> 신규 고객정보시스템 법적 준거성 대응</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Axis 2 -->
+        <div class="cyber-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amber-950/80 border border-amber-800/50 flex items-center justify-center mb-6">
+              <i data-lucide="server" class="w-7 h-7 text-amber-400"></i>
+            </div>
+            <div class="text-xs font-mono text-amber-400 mb-1">MODEL 02</div>
+            <h3 class="text-xl font-bold text-white mb-3">IT & 보안 구축</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              검증된 국내외 1위 벤더 솔루션과 하드웨어를 바탕으로 무결점 인프라 구축.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> 망분리 및 망연계(자료전송, 스트리밍) 구축</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> 재택/원격근무 SSL-VPN 아키텍처 커스터마이징</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> ADC L4/L7 스위치, WAF 웹방화벽, 보안스위치</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> HCI 시스템(서버, 스위치, 백본, 재해복구 DR 센터)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Axis 3 -->
+        <div class="cyber-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sky-950/80 border border-sky-800/50 flex items-center justify-center mb-6">
+              <i data-lucide="activity" class="w-7 h-7 text-sky-400"></i>
+            </div>
+            <div class="text-xs font-mono text-sky-400 mb-1">MODEL 03</div>
+            <h3 class="text-xl font-bold text-white mb-3">통합 매니지먼트 (유지관리)</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              24/365 체계적인 장애 예방 및 신속한 장애 복구 기술지원 서비스.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> 공공/국방/금융 100여 고객사 시스템 통합유지보수</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> 전문 기술인력 상주 및 정기/긴급 예방 점검</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> 안정적 인프라 운영을 위한 고객사 교육 및 기술이전</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> SLA 기반 체계적인 성과 지표 관리</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPANDED PARTNERS / VENDORS (PPT REF) ================= -->
+  <section id="partners" class="py-24 px-5 sm:px-8 bg-slate-950/70 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="handshake" class="w-4 h-4"></i> Vendor Alliance
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          주요 파트너스 (벤더 연합)
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          에스엠피플스는 최고의 경쟁력을 보유한 보안 및 네트워크 분야 핵심 벤더들과 견고한 파트너십을 체결하고 있습니다.
+        </p>
+      </div>
+
+      <!-- Partner Cards Grid (All from PPT) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">한싹 (HANSSAK)</div>
+          <span class="text-[11px] text-cyan-400">망연계 SecureGate</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">시큐위즈 (SecuWiz)</div>
+          <span class="text-[11px] text-cyan-400">SSL VPN 게이트웨이</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">파이오링크 (PIOLINK)</div>
+          <span class="text-[11px] text-cyan-400">ADC 부하분산 · WAF</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">나일소프트 (NileSOFT)</div>
+          <span class="text-[11px] text-cyan-400">취약점진단 SecuGuard</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">지니언스 (Genians)</div>
+          <span class="text-[11px] text-cyan-400">지능형 NAC · ZTNA</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">시큐아이 (SECUI)</div>
+          <span class="text-[11px] text-cyan-400">차세대 방화벽 UTM</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">엑스게이트 (AXGATE)</div>
+          <span class="text-[11px] text-cyan-400">VPN / UTM 보안장비</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">휴네시온 (HUNESION)</div>
+          <span class="text-[11px] text-cyan-400">망연계 / 시스템 접근제어</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">아토리서치</div>
+          <span class="text-[11px] text-cyan-400">SDN / 스마트시티 인프라</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">시스코 (CISCO)</div>
+          <span class="text-[11px] text-cyan-400">백본 · 스위치 · 무선네트워크</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">아라드네트웍스 (ARAD)</div>
+          <span class="text-[11px] text-cyan-400">네트워크 가상화 보안</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">코어에지네트웍스</div>
+          <span class="text-[11px] text-cyan-400">고성능 L2/L3 스위치</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">(주)나인시큐리티</div>
+          <span class="text-[11px] text-cyan-400">정보보안 전문 솔루션</span>
+        </div>
+
+        <div class="cyber-card rounded-xl p-4 text-center">
+          <div class="font-bold text-white text-sm mb-1">소만사 (SOMANSA)</div>
+          <span class="text-[11px] text-cyan-400">개인정보보호 및 DLP</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE SECURITY SOLUTIONS (NEW DETAILED SECTION) ================= -->
+  <section id="solutions" class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+            <i data-lucide="shield" class="w-4 h-4"></i> Security Solution Portfolio
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            보안 솔루션 & 기술 제품군
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">
+          에스엠피플스는 국내외 검증된 보안 벤더사들과 함께 공공, 금융, 국방 및 기업 환경에 최적화된 토털 보안 아키텍처를 공급·구축합니다.
+        </p>
+      </div>
+
+      <!-- Solution Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-slate-800/70">
+        <button onclick="filterSolutions('all')" class="sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-cyan-500 text-slate-950 active" data-filter="all">
+          전체 솔루션
+        </button>
+        <button onclick="filterSolutions('crossdomain')" class="sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" data-filter="crossdomain">
+          망연계 · 제로트러스트 · SSL VPN
+        </button>
+        <button onclick="filterSolutions('network')" class="sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" data-filter="network">
+          엔드포인트(NAC) · UTM · WAF/ADC
+        </button>
+        <button onclick="filterSolutions('assessment')" class="sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" data-filter="assessment">
+          취약점 분석 · ISMS / CSAP 컨설팅
+        </button>
+        <button onclick="filterSolutions('privacy')" class="sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" data-filter="privacy">
+          개인정보보호 · DB보안 · 네트워크 가상화
+        </button>
+      </div>
+
+      <!-- Solution Cards Grid -->
+      <div id="solutionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. 한싹 SecureGate 망연계 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="crossdomain">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/60 text-[11px] font-semibold">망연계 / 자료전송</span>
+              <span class="text-xs font-mono text-slate-400">한싹 (HANSSAK)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">SecureGate 망연계 솔루션</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              분리된 인터넷망과 업무망 간의 안전한 데이터 송수신을 위한 국가용 암호모듈 및 CC인증 획득 1위 망연계 시스템.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i> 망간 파일자료전송 및 스트리밍 연계(DB/CCTV)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i> 전송 파일 악성코드 다중 백신 검사 및 승인 결재 체계</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0"></i> 전용 Non-IP 스토리지 방식 통신으로 물리적 망분리 보안 충족</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">CC인증 / GS 1등급</span>
+            <button onclick="openSolutionDetail('securegate')" class="text-xs text-cyan-400 font-semibold hover:text-cyan-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. 시큐위즈 Secuway SSL VPN -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="crossdomain">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-sky-950 text-sky-400 border border-sky-800/60 text-[11px] font-semibold">원격접속 / 재택근무 보안</span>
+              <span class="text-xs font-mono text-slate-400">시큐위즈 (SecuWiz)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Secuway SSL VPN 게이트웨이</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              스마트워크 및 재택 원격근무 시 사내 중요 업무망으로의 안전한 원격 암호화 터널링과 철저한 사용자 인증을 보장합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i> 다중 2차 인증(OTP, 생체인식, SMS, 모바일 앱 PKI)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i> 단말 보안 무결성 검증 (백신 가동 여부, OS 패치 점검)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i> 용인시 스마트교통센터, 서울시서비스원 등 구축 실적</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">국정원 검증필 암호화</span>
+            <button onclick="openSolutionDetail('secuway')" class="text-xs text-sky-400 font-semibold hover:text-sky-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. 지니언스 Genian NAC & ZTNA -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="network">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/60 text-[11px] font-semibold">엔드포인트 / 제로트러스트</span>
+              <span class="text-xs font-mono text-slate-400">지니언스 (Genians)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Genian NAC 지능형 접근제어</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              내부 네트워크에 접속하는 모든 유무선 단말(PC, 모바일, IoT, 서버)을 식별하고 보안 정책을 강제 집행하는 1위 NAC.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> 비인가 단말 및 미승인 AP/테더링 실시간 탐지·차단</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> 보안 패치 미준수 단말 자동 격리 및 치료 유도(PMS)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> ZTNA(Zero Trust Network Access) 연계 아키텍처 제공</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">국내 조달 1위 NAC</span>
+            <button onclick="openSolutionDetail('nac')" class="text-xs text-emerald-400 font-semibold hover:text-emerald-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. 파이오링크 ADC (PAS-K) & 웹방화벽 (WEBFRONT-K) -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="network">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-blue-950 text-blue-400 border border-blue-800/60 text-[11px] font-semibold">트래픽 부하분산 / 웹보안</span>
+              <span class="text-xs font-mono text-slate-400">파이오링크 (PIOLINK)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">PAS-K ADC & WEBFRONT-K WAF</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              고성능 L4/L7 로드밸런싱과 OWASP Top 10 웹 취약점 공격, DDoS를 실시간 방어하여 대국민 서비스 안정성을 보장합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 flex-shrink-0"></i> 대용량 SSL 가속 처리 및 서버 부하 지능형 로드밸런싱</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 flex-shrink-0"></i> SQL 인젝션, XSS, 웹쉘 업로드 및 API 취약점 차단</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 flex-shrink-0"></i> 고가용성 HA 액티브-스탠바이 / 액티브-액티브 구성 지원</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">초고속 하드웨어 가속</span>
+            <button onclick="openSolutionDetail('piolink')" class="text-xs text-blue-400 font-semibold hover:text-blue-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. 시큐아이 / 엑스게이트 차세대 UTM 및 방화벽 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="network">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-indigo-950 text-indigo-400 border border-indigo-800/60 text-[11px] font-semibold">차세대 네트워크 방화벽</span>
+              <span class="text-xs font-mono text-slate-400">시큐아이 · 엑스게이트</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">차세대 통합 보안 UTM / NGFW</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              방화벽, IPS(침입방지), VPN, 안티바이러스, 앱 제어를 단일 엔진으로 통합하여 경계선 침해위협을 원천 봉쇄합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400 flex-shrink-0"></i> 세션 기반 애플리케이션 및 사용자 ID 제어</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400 flex-shrink-0"></i> 최신 위협 인텔리전스 연동을 통한 제로데이 공격 차단</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400 flex-shrink-0"></i> 군 전술통신망, 한국서부발전, 금융권 구축 레퍼런스</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">멀티기가비트 처리 성능</span>
+            <button onclick="openSolutionDetail('ngfw')" class="text-xs text-indigo-400 font-semibold hover:text-indigo-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. 나일소프트 SecuGuard 취약점 진단 및 보안감사 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="assessment">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-amber-950 text-amber-400 border border-amber-800/60 text-[11px] font-semibold">취약점 분석 / 감사</span>
+              <span class="text-xs font-mono text-slate-400">나일소프트 · 나인시큐리티</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">SecuGuard 상시 취약점 자동진단</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              서버 OS, DBMS, WEB/WAS 및 네트워크·보안장비 전반의 보안 설정 취약점을 자동 점검하고 조치 가이드를 제공합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> KISA 주요정보통신기반시설 취약점 가이드 100% 준수</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> 전자금융감독규정 및 행안부 보안 감사 컴플라이언스 대응</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> 한국가스공사, 한국농어촌공사, 법무부 진단 사업 수행</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">자동화 감사 리포팅</span>
+            <button onclick="openSolutionDetail('secuguard')" class="text-xs text-amber-400 font-semibold hover:text-amber-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. ISMS-P 및 KISA CSAP 클라우드 인증 컨설팅 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="assessment">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-teal-950 text-teal-400 border border-teal-800/60 text-[11px] font-semibold">보안 인증 컨설팅</span>
+              <span class="text-xs font-mono text-slate-400">에스엠피플스 컨설팅본부</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">ISMS-P & CSAP 보안인증 종합 컨설팅</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              공공 및 민간 클라우드 진입을 위한 CSAP(IaaS/SaaS/DaaS) 인증 획득 및 정보보호 관리체계(ISMS-P, ISO27001) 수립을 지원합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400 flex-shrink-0"></i> 현황 분석 및 Gap 분석, 결함 개선 이행 가이드</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400 flex-shrink-0"></i> 관리적·물리적·기술적 보호대책 및 보안규정 제·개정</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400 flex-shrink-0"></i> 모의심사 및 한국인터넷진흥원(KISA) 본심사 밀착 대응</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">인증 취득률 100% 목표</span>
+            <button onclick="openSolutionDetail('compliance')" class="text-xs text-teal-400 font-semibold hover:text-teal-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. 소만사 개인정보보호 / DLP / DB 암호화 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="privacy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-purple-950 text-purple-400 border border-purple-800/60 text-[11px] font-semibold">데이터 보호 / 개인정보</span>
+              <span class="text-xs font-mono text-slate-400">소만사 (SOMANSA)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">통합 개인정보보호 및 DLP 데이터 유출 방지</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              PC, 네트워크, 서버에 분산된 개인정보(주민등록번호, 금융정보 등)를 검출·암호화하고 USB, 메일 유출을 원천 통제합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 flex-shrink-0"></i> 엔드포인트 출력물·USB·외장매체 보안 및 화면 캡처 방지</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 flex-shrink-0"></i> DB 접근제어 및 컬럼 암호화를 통한 비인가 쿼리 차단</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400 flex-shrink-0"></i> 개인정보보호법 안전성 확보 조치 기준 완벽 부합</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">개인정보보호법 필수 요건</span>
+            <button onclick="openSolutionDetail('privacy_dlp')" class="text-xs text-purple-400 font-semibold hover:text-purple-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 9. 아토리서치 / 아라드네트웍스 SDN 및 스마트 보안 인프라 -->
+        <div class="sol-card cyber-card rounded-2xl p-6 flex flex-col justify-between" data-category="privacy">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-rose-950 text-rose-400 border border-rose-800/60 text-[11px] font-semibold">가상화 / 스마트시티 보안</span>
+              <span class="text-xs font-mono text-slate-400">아토리서치 · 아라드네트웍스</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">SDN 소프트웨어정의 네트워크 & IoT 보안</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              클라우드 및 스마트시티, CCTV 관제망의 네트워크를 가상화 세분화(Micro-Segmentation)하여 횡적 이동 공격을 차단합니다.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-rose-400 flex-shrink-0"></i> 세대별·장치별 네트워크 가상 분리를 통한 해킹 확산 방지</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-rose-400 flex-shrink-0"></i> SDN 기반 동적 네트워크 트래픽 제어 및 통합 가시성</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-rose-400 flex-shrink-0"></i> 지능형 스마트빌딩 및 공공 CCTV 영상 보안 인프라 적용</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400 font-mono">스마트시티 표준 규격</span>
+            <button onclick="openSolutionDetail('sdn_iot')" class="text-xs text-rose-400 font-semibold hover:text-rose-300 flex items-center gap-1">
+              상세 사양 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Consultation CTA Banner -->
+      <div class="mt-14 cyber-card rounded-2xl p-8 bg-gradient-to-r from-slate-900 via-cyan-950/40 to-slate-900 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-cyan-400 flex-shrink-0">
+            <i data-lucide="headphones" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white">우리 기관/기업에 맞는 최적의 보안 솔루션 설계가 필요하신가요?</h4>
+            <p class="text-xs text-slate-400 mt-1">에스엠피플스의 특급/고급 전문 엔지니어가 직접 환경 분석 및 견적 컨설팅을 제공해 드립니다.</p>
+          </div>
+        </div>
+        <a href="#contact" class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs tracking-wide transition-all shadow-md shadow-cyan-500/25 whitespace-nowrap">
+          솔루션 도입 상담 신청
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SOLUTION DETAIL MODAL ================= -->
+  <div id="solutionModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="cyber-card rounded-2xl max-w-2xl w-full p-6 sm:p-8 bg-[#0b101b] border border-cyan-500/30 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeSolutionModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800/80">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL BUSINESS (KOICA / EDCF) ================= -->
+  <section id="global" class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+            <i data-lucide="globe-2" class="w-4 h-4"></i> Global & Public Projects
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            글로벌 해외사업 (KOICA / EDCF)
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md">
+          정부 ODA 사업 및 글로벌 기업의 해외 거점 인프라를 성공적으로 구축하여 국제적인 기술 경쟁력을 입증하고 있습니다.
+        </p>
+      </div>
+
+      <!-- Global Country Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-red-600 flex">
+              <div class="w-1/3 bg-red-600"></div>
+              <div class="w-1/3 bg-white"></div>
+              <div class="w-1/3 bg-red-600"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">페루 (Peru)</h4>
+              <span class="text-[11px] text-cyan-400">KOICA ODA</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">건강보험 디지털화 및 원격의료 플랫폼 구축</p>
+          <p class="text-xs text-slate-400">국가 의료 전산망 안정화 및 보안 인프라 연동 구축</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-red-600 flex items-center justify-center">
+              <span class="text-yellow-300 text-xs font-bold">☀</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">키르기즈공화국</h4>
+              <span class="text-[11px] text-cyan-400">KOICA / 정부사업</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">중앙선거위 투표소 네트워크 환경 개선 & G-Cloud</p>
+          <p class="text-xs text-slate-400">사이버안전센터 구축 및 정부 클라우드 정보보호 솔루션 공급</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-blue-900 flex flex-col justify-around px-1">
+              <span class="text-[8px] text-white">★★★</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">미국 (USA)</h4>
+              <span class="text-[11px] text-cyan-400">글로벌 엔터프라이즈</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">삼성전자 홈어플라이언스 팩토리(SEHA)</p>
+          <p class="text-xs text-slate-400">Cisco 백본 코어 네트워크 및 대규모 무선랜(WLAN) 인프라 구축</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-red-600 flex items-center justify-center">
+              <span class="text-white text-xs font-bold">☪</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">튀니지 (Tunisia)</h4>
+              <span class="text-[11px] text-cyan-400">KOICA ODA</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">전자정부 온라인 교육훈련 시스템 구축</p>
+          <p class="text-xs text-slate-400">국가 전자정부 포털 시스템 및 통합 정보보호 솔루션 구축</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-red-600 flex flex-col">
+              <div class="h-1/2 bg-red-600"></div>
+              <div class="h-1/2 bg-white"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">인도네시아</h4>
+              <span class="text-[11px] text-cyan-400">글로벌 제조</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">파크랜드 정보보호 & MIS 시스템</p>
+          <p class="text-xs text-slate-400">대규모 생산 공장 MIS 구축 및 데이터 유출 방지 보안 체계 확립</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 bg-green-700 flex items-center justify-center">
+              <span class="text-yellow-300 text-xs font-bold">◆</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">브라질 (Brazil)</h4>
+              <span class="text-[11px] text-cyan-400">스마트 팩토리</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">DNA 브라질공장 MES L4 Switch</p>
+          <p class="text-xs text-slate-400">제조 생산 공정(MES) 고가용성 로드밸런싱 네트워크 구축</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 flex">
+              <div class="w-1/2 bg-green-700"></div>
+              <div class="w-1/2 bg-white"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">알제리 (Algeria)</h4>
+              <span class="text-[11px] text-cyan-400">정부 연계</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">알제리 정부 망연계 솔루션 도입</p>
+          <p class="text-xs text-slate-400">국가 행정망 간 데이터 무결성 보장을 위한 안전한 자료전송망 구축</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-7 rounded overflow-hidden shadow border border-slate-700 flex flex-col">
+              <div class="h-1/3 bg-blue-500"></div>
+              <div class="h-1/3 bg-white"></div>
+              <div class="h-1/3 bg-green-600"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">우즈베키스탄 / 캄보디아</h4>
+              <span class="text-[11px] text-cyan-400">EDCF 차관사업</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 font-semibold mb-1">국립 아동병원 네트워크보안 & 고용전산망</p>
+          <p class="text-xs text-slate-400">의료 IT 인프라 보안 구축 및 캄보디아 국가 고용서비스 전산망 고도화</p>
+        </div>
+
+      </div>
+
+      <!-- Domestic Track Record Table (From PPT) -->
+      <div class="mt-16 cyber-card rounded-2xl p-7">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i data-lucide="award" class="w-5 h-5 text-cyan-400"></i> 국내 주요 공공 · 국방 · 엔터프라이즈 사업 이력
+          </h3>
+          <span class="text-xs font-mono text-cyan-400">100+ CLIENT TRACK RECORD</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>국군 9965 / 4284부대 전산장비 통합유지보수</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>한국연구재단(NRF) 제1·2차 보안 망분리 및 유지보수</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>범부처 연구비통합관리시스템 운영 및 유지관리</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>용인시 첨단교통센터 SSL-VPN 구축</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>GTX-A 노선 네트워크 및 VPN 납품·구축</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>서울고속도로주식회사 네트워크 및 보안 유지관리</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>법무부 서울지방교정청 취약점 진단 컨설팅</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>신한은행 SSL VPN 아키텍처 커스터마이징</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>경기도 교육청 스마트워크 5G 국가망 망연계 컨설팅</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>한국가스공사 / 한국농어촌공사 취약점진단</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>효성에프엠에스 재해복구(DR) 센터 인프라 구축</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+            <span>서해선 복선철도 MPLS-TP 및 네트워크 장비 구축</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS & QUALIFICATIONS ================= -->
+  <section id="certifications" class="py-24 px-5 sm:px-8 bg-slate-950/70 border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i> Official Certifications
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          기업 인증 및 기술 인가 현황
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          공공기관 및 국가 R&D 사업 입찰 자격을 공인받은 신뢰도 높은 기술 인증 라이선스를 보유하고 있습니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="badge-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">ISO 9001:2015</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">GERMAN CERT</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">품질경영시스템 인증</h5>
+          <p class="text-xs text-slate-400">인증범위: 소프트웨어의 개발 및 유지 보수 (IAF Code: 33)</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="file-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">직접생산확인증명서</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">중소기업유통센터</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">정보시스템 유지관리 서비스</h5>
+          <p class="text-xs text-slate-400">세부품명: 정보시스템유지관리서비스 (공학연구 및 기술기반)</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="file-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">직접생산확인증명서</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">중소기업유통센터</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">소프트웨어 유지 및 지원 서비스</h5>
+          <p class="text-xs text-slate-400">세부품명: 소프트웨어유지및지원서비스 공공 입찰 적격</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="file-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">직접생산확인증명서</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">중소기업유통센터</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">정보인프라 구축 서비스</h5>
+          <p class="text-xs text-slate-400">세부품명: 경영정보시스템 정보인프라구축서비스 인증</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="microscope" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">연구개발전담부서 인정서</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">과학기술정보통신부 / KOITA</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">기업부설연구소 설립</h5>
+          <p class="text-xs text-slate-400">기초연구진흥 및 기술개발지원에 관한 법률 제14조 인정</p>
+        </div>
+
+        <div class="cyber-card rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-800 flex items-center justify-center text-cyan-400">
+              <i data-lucide="cable" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">정보통신공사업등록증</h4>
+              <span class="text-[11px] text-cyan-400 font-mono">경기도</span>
+            </div>
+          </div>
+          <h5 class="text-sm font-semibold text-slate-200 mb-1">정보통신공사업 정식 등록</h5>
+          <p class="text-xs text-slate-400">정보통신공사업법 제14조에 의한 적법 시공 및 등록 업체</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECURITY NEWS FEED (NO YEAR/MONTH AS REQUESTED) ================= -->
+  <section id="news" class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+            <i data-lucide="newspaper" class="w-4 h-4"></i> Cyber Security & Tech Feed
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            최신 보안 뉴스 & 기술 공지사항
+          </h2>
+        </div>
+        <div class="text-xs text-slate-400">
+          KISA 및 사이버보안 권고 실시간 모니터링 가이드
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- News Card 1 (No year/month) -->
+        <article class="cyber-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-red-950/70 text-red-400 border border-red-800/60 font-semibold flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span> 긴급 보안권고
+              </span>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/50">KISA UPDATE</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-100 hover:text-cyan-400 transition-colors mb-3 leading-snug">
+              Microsoft 보안 취약점에 따른 정기 패치 및 보안 업데이트 권고
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-4">
+              KISA 인터넷진흥원 및 국가사이버안보센터 권고 내용입니다. Windows OS 및 Hyper-V, 주요 서비스의 원격코드 실행(RCE) 취약점을 해결하기 위한 최신 패치 적용 안내입니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-cyan-400 font-medium">
+            <span>자세히 보기</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </article>
+
+        <!-- News Card 2 (No year/month) -->
+        <article class="cyber-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-cyan-950/70 text-cyan-400 border border-cyan-800/60 font-semibold">
+                기술 동향
+              </span>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/50">TECH REPORT</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-100 hover:text-cyan-400 transition-colors mb-3 leading-snug">
+              공공 및 금융 부문 제로트러스트(ZTNA) 가이드라인 대응 아키텍처
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-4">
+              경계 기반 보안 모델의 한계를 극복하는 차세대 제로트러스트 보안 체계. 망분리 환경과 지능형 NAC(지니언스), SSL-VPN 연계 방안 및 기술 프레임워크를 제안합니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-cyan-400 font-medium">
+            <span>자세히 보기</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </article>
+
+        <!-- News Card 3 (No year/month) -->
+        <article class="cyber-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-amber-950/70 text-amber-400 border border-amber-800/60 font-semibold">
+                운영 가이드
+              </span>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/50">MAINTENANCE</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-100 hover:text-cyan-400 transition-colors mb-3 leading-snug">
+              망간 자료전송 시스템 정기 예방점검 및 성능 최적화 공지
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-4">
+              에스엠피플스 유지보수 고객사를 대상으로 한 대용량 파일 전송 스토리지 무결성 검증, 악성코드 다중 백신 필터링 엔진 업데이트 및 트래픽 부하분산 점검 가이드입니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-cyan-400 font-medium">
+            <span>자세히 보기</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATION & CONTACT ================= -->
+  <section id="location" class="py-24 px-5 sm:px-8 border-b border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="map-pin" class="w-4 h-4"></i> Headquarter & Branch
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          오시는 길 (Location)
+        </h2>
+        <p class="text-slate-400 text-sm">
+          에스엠피플스는 수도권 본사와 대전 지사를 통해 신속한 기술 지원망을 운영합니다.
+        </p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 rounded-xl bg-slate-900 border border-slate-800">
+          <button id="tabHQ" onclick="switchLocation('hq')" class="px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-cyan-500 text-slate-950 shadow">
+            본사 (고양시 덕은리버워크)
+          </button>
+          <button id="tabBranch" onclick="switchLocation('branch')" class="px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition-all">
+            지사 (대전 가온비즈타워)
+          </button>
+        </div>
+      </div>
+
+      <!-- HQ Content -->
+      <div id="hqView" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div class="lg:col-span-5 cyber-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 text-xs font-bold font-mono mb-4 border border-cyan-800">
+              HEADQUARTER (본사)
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">에스엠피플스(주) 본사</h3>
+            
+            <div class="space-y-4 text-sm text-slate-300 mb-6">
+              <div class="flex items-start gap-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">도로명 주소</div>
+                  <div class="font-medium text-slate-100" id="hqAddrText">경기 고양시 덕양구 청초로 66 B동 1619, 1607호 (덕은리버워크)</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">영업 및 제휴 문의</div>
+                  <a href="mailto:sales@smpeoples.kr" class="text-cyan-400 hover:underline font-mono">sales@smpeoples.kr</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="wrench" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">기술지원 문의</div>
+                  <a href="mailto:tech@smpeoples.kr" class="text-cyan-400 hover:underline font-mono">tech@smpeoples.kr</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="copyAddress('hq')" class="w-full py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="copyHQMsg">본사 주소 텍스트 복사</span>
+          </button>
+        </div>
+
+        <div class="lg:col-span-7 cyber-card rounded-2xl p-6 flex flex-col justify-center min-h-[340px] relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-950">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-slate-400 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 경기 고양시 덕양구 덕은지구 리버워크
+            </span>
+            <span class="text-xs text-cyan-400 font-mono">MAP VIEW</span>
+          </div>
+          <!-- Stylized Map Placeholder / Visual Graphic -->
+          <div class="w-full h-64 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col items-center justify-center text-center p-6 relative">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <i data-lucide="navigation" class="w-10 h-10 text-cyan-400 mb-3 animate-float"></i>
+            <h4 class="text-base font-bold text-white mb-1">고양 덕은리버워크 B동 1619호</h4>
+            <p class="text-xs text-slate-400 max-w-sm mb-4">
+              가양대교 북단 덕은지구 위치 • 자유로 및 강변북로 접근 용이
+            </p>
+            <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-cyan-600/30 hover:bg-cyan-600/50 border border-cyan-500/40 text-cyan-300 text-xs font-medium inline-flex items-center gap-1.5 transition-all">
+              <span>네이버 지도 / 카카오맵에서 길찾기</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch Content (Hidden by default) -->
+      <div id="branchView" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div class="lg:col-span-5 cyber-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-2.5 py-1 rounded bg-sky-950 text-sky-400 text-xs font-bold font-mono mb-4 border border-sky-800">
+              DAEJEON BRANCH (지사)
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">에스엠피플스(주) 지사</h3>
+            
+            <div class="space-y-4 text-sm text-slate-300 mb-6">
+              <div class="flex items-start gap-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">도로명 주소</div>
+                  <div class="font-medium text-slate-100" id="branchAddrText">대전시 대덕구 대화동 611 가온비즈타워 1124호</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">중부/대전권 기술지원</div>
+                  <a href="mailto:tech@smpeoples.kr" class="text-sky-400 hover:underline font-mono">tech@smpeoples.kr</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="briefcase" class="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-xs text-slate-400 mb-0.5">영업 및 견적 문의</div>
+                  <a href="mailto:sales@smpeoples.kr" class="text-sky-400 hover:underline font-mono">sales@smpeoples.kr</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="copyAddress('branch')" class="w-full py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="copyBranchMsg">지사 주소 텍스트 복사</span>
+          </button>
+        </div>
+
+        <div class="lg:col-span-7 cyber-card rounded-2xl p-6 flex flex-col justify-center min-h-[340px] relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-950">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-slate-400 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 대전시 대덕구 대화동 가온비즈타워
+            </span>
+            <span class="text-xs text-sky-400 font-mono">MAP VIEW</span>
+          </div>
+          <div class="w-full h-64 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col items-center justify-center text-center p-6 relative">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <i data-lucide="navigation" class="w-10 h-10 text-sky-400 mb-3 animate-float"></i>
+            <h4 class="text-base font-bold text-white mb-1">대전 가온비즈타워 1124호</h4>
+            <p class="text-xs text-slate-400 max-w-sm mb-4">
+              중부권 공공기관 및 테크노밸리 기술 지원 거점
+            </p>
+            <a href="https://map.naver.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-sky-600/30 hover:bg-sky-600/50 border border-sky-500/40 text-sky-300 text-xs font-medium inline-flex items-center gap-1.5 transition-all">
+              <span>네이버 지도 / 카카오맵에서 길찾기</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INQUIRY / CONTACT FORM ================= -->
+  <section id="contact" class="py-24 px-5 sm:px-8 bg-slate-950/90 relative">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-2">
+          <i data-lucide="send" class="w-4 h-4"></i> Get In Touch
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          견적 및 기술문의
+        </h2>
+        <p class="text-slate-400 text-sm">
+          도입 상담이나 기술 지원이 필요하신 경우 아래 정보를 남겨주시면 담당 엔지니어가 신속히 회신드립니다.
+        </p>
+      </div>
+
+      <div class="cyber-card rounded-2xl p-6 sm:p-10">
+        <form id="inquiryForm" onsubmit="handleInquirySubmit(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">회사명 / 기관명 <span class="text-cyan-400">*</span></label>
+              <input type="text" required placeholder="예: (주)한국정보" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">담당자 성함 / 직함 <span class="text-cyan-400">*</span></label>
+              <input type="text" required placeholder="예: 홍길동 팀장" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">회신 이메일 <span class="text-cyan-400">*</span></label>
+              <input type="email" required placeholder="email@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">연락처 <span class="text-cyan-400">*</span></label>
+              <input type="tel" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">관심 솔루션 / 벤더사 선택</label>
+            <select class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all">
+              <option value="all">선택안함 / 전반적인 상담</option>
+              <option value="hanssak">한싹 (망연계 / SecureGate)</option>
+              <option value="secuwiz">시큐위즈 (SSL-VPN / 원격접속)</option>
+              <option value="piolink">파이오링크 (ADC 부하분산 / 웹방화벽)</option>
+              <option value="nilesoft">나일소프트 (통합 취약점 분석 SecuGuard)</option>
+              <option value="genians">지니언스 (네트워크 접근제어 NAC / ZTNA)</option>
+              <option value="tech">기술지원 및 유지보수 요청</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">문의 내용 <span class="text-cyan-400">*</span></label>
+            <textarea rows="4" required placeholder="구축 환경, 사용자 규모, 도입 희망 시기 등을 작성해주시면 더 정확한 안내가 가능합니다." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-all"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-600 hover:from-cyan-400 hover:to-sky-500 text-white font-bold text-sm tracking-wider shadow-lg shadow-cyan-500/25 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>견적 및 문의 등록하기</span>
+          </button>
+        </form>
+
+        <!-- Message Box Modal replacement -->
+        <div id="formSuccessAlert" class="hidden mt-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-600/70 text-emerald-300 text-sm flex items-center gap-3">
+          <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0 text-emerald-400"></i>
+          <div>
+            <strong>문의가 정상 접수되었습니다.</strong><br>
+            담당 부서(sales@smpeoples.kr / tech@smpeoples.kr)에서 검토 후 신속히 연락드리겠습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-[#05080e] border-t border-slate-900 py-16 px-5 sm:px-8 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 border-b border-slate-800/60">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <span class="text-base font-bold text-white tracking-tight">에스엠피플스(주)</span>
+            <span class="text-[11px] text-slate-500 ml-2 font-mono">SMPeoples</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-slate-300">
+          <a href="#company" class="hover:text-cyan-400 transition-colors">회사소개</a>
+          <a href="#partners" class="hover:text-cyan-400 transition-colors">파트너사</a>
+          <a href="#solutions" class="hover:text-cyan-400 transition-colors">보안솔루션</a>
+          <a href="#news" class="hover:text-cyan-400 transition-colors">보안동향</a>
+          <a href="#location" class="hover:text-cyan-400 transition-colors">오시는길</a>
+        </div>
+      </div>
+
+      <div class="pt-8 space-y-3 leading-relaxed">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p><strong>본사:</strong> 경기도 고양시 덕양구 청초로 66 B동 1619, 1607호 (덕은동, 덕은리버워크)</p>
+            <p><strong>지사:</strong> 대전시 대덕구 대화로 120 가온비즈타워 1124호</p>
+            <p><strong>대표전화:</strong> 0505-055-1210 | <strong>팩스:</strong> 0505-65-1210</p>
+          </div>
+          <div>
+            <p><strong>대표이사:</strong> 최정수 | <strong>사업자등록번호:</strong> 393-81-01569</p>
+            <p><strong>영업문의:</strong> <a href="mailto:sales@smpeoples.kr" class="text-slate-300 hover:text-cyan-400 underline font-mono">sales@smpeoples.kr</a></p>
+            <p><strong>기술지원:</strong> <a href="mailto:tech@smpeoples.kr" class="text-slate-300 hover:text-cyan-400 underline font-mono">tech@smpeoples.kr</a></p>
+          </div>
+        </div>
+        
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-2">
+          <p>© 2026 에스엠피플스 주식회사 (SMPEOPLES Co., Ltd.). All Rights Reserved.</p>
+          <p>고객의 가치를 창조하는 기업 • 정보보호 전문기업</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile Hamburger Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Solution Filter Logic
+    function filterSolutions(category) {
+      const cards = document.querySelectorAll('.sol-card');
+      const tabs = document.querySelectorAll('.sol-tab');
+
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-filter') === category) {
+          tab.className = 'sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-cyan-500 text-slate-950 active shadow';
+        } else {
+          tab.className = 'sol-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 border border-slate-800 text-slate-300 hover:text-white';
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    }
+
+    // Solution Detailed Data Dictionary
+    const solutionDetails = {
+      securegate: {
+        vendor: "한싹 (HANSSAK)",
+        badge: "망연계 / 망분리",
+        title: "SecureGate 망간 자료전송 & 스트리밍 연계 솔루션",
+        desc: "물리적 또는 논리적으로 분리된 내부 업무망과 외부 인터넷망 사이에서 보안 정책에 따라 파일 및 실시간 스트림 데이터를 안전하게 송수신하는 공공/금융 조달 1위 솔루션입니다.",
+        features: [
+          "Non-IP 방식 전용 통신(Shared Memory / Storage)으로 해킹 경로 완벽 차단",
+          "멀티 안티바이러스 엔진 연동을 통한 전송 파일 내 악성코드 실시간 검역",
+          "승인/반려 결재 워크플로우 및 개인정보(주민번호, 계좌 등) 패턴 마스킹",
+          "대용량 파일 전송 가속화 및 CCTV/VMS 실시간 비디오 스트리밍 연계 지원"
+        ],
+        compliance: "국가정보원 CC인증(EAL4), 보안기능확인서, GS인증 1등급, 전자금융감독규정 충족",
+        trackRecord: "한국연구재단 1·2차 보안망분리 구축, 경남도청, 알제리 정부 망연계 도입 사업 등"
+      },
+      secuway: {
+        vendor: "시큐위즈 (SecuWiz)",
+        badge: "원격보안 / SSL VPN",
+        title: "Secuway SSL VPN 원격접속 게이트웨이",
+        desc: "웹 브라우저 및 전용 에이전트를 통해 원격지 재택근무자나 출장자가 본사 내부 인트라넷 및 정보시스템에 안전하게 접속할 수 있도록 암호화 터널을 제공합니다.",
+        features: [
+          "국정원 검증필 ARIA / SEED 및 AES 고강도 대칭키 암호화 알고리즘 탑재",
+          "강력한 2단계 다중 인증(MFA: OTP, 모바일 간편인증, FIDO 등) 지원",
+          "사용자 단말 백신 설치 여부, OS 취약점 점검 및 불법 소프트웨어 감지 격리",
+          "접속자별/그룹별 접근 가능 서버 IP/포트 단위의 정밀 권한 제어"
+        ],
+        compliance: "국가정보원 보안기능확인서, KISA 암호모듈검증(KCMVP) 탑재",
+        trackRecord: "용인시 첨단교통센터, 서울시 사회서비스원, 신한은행 커스터마이징 컨설팅 등"
+      },
+      nac: {
+        vendor: "지니언스 (Genians)",
+        badge: "엔드포인트 / ZTNA",
+        title: "Genian NAC 지능형 단말 네트워크 접근제어",
+        desc: "네트워크에 접속하는 모든 유무선 단말(PC, 노트북, 스마트폰, 프린터, IP카메라, IoT 장비)을 자동으로 식별하고 보안 정책을 실시간 강제화하는 솔루션입니다.",
+        features: [
+          "DPI(심층 패킷 분석) 기반 정밀 단말 프로파일링 기술(특허 보유)",
+          "비인가 무선 공유기(AP) 및 스마트폰 USB 테더링 접속 실시간 탐지·차단",
+          "필수 보안 프로그램(백신, DRM, 개인정보필터) 미설치 시 네트워크 격리",
+          "차세대 제로트러스트(ZTNA) 아키텍처 연계 지원"
+        ],
+        compliance: "조달청 우수조달물품 등록, CC인증, 가트너 NAC 마켓가이드 등재",
+        trackRecord: "한국연구재단 NAC 구축, 다수 공공기관 및 국방 전산망 적용"
+      },
+      piolink: {
+        vendor: "파이오링크 (PIOLINK)",
+        badge: "ADC / 웹방화벽",
+        title: "PAS-K 애플리케이션 전송 컨트롤러 & WEBFRONT-K WAF",
+        desc: "대규모 트래픽 발생 시 웹 서버의 과부하를 분산하고, OWASP 10대 웹 취약점 및 제로데이 웹 공격을 고속 하드웨어 가속 기반으로 실시간 방어합니다.",
+        features: [
+          "고성능 L4~L7 서버 부하분산(SLB), 방화벽 부하분산(FLB), 재해복구 GSLB 지원",
+          "대용량 SSL/TLS 암복호화 전용 하드웨어 칩셋 탑재로 서버 자원 최적화",
+          "SQL Injection, XSS, Webshell, 자격증명 스터핑(Credential Stuffing) 차단",
+          "액티브-액티브 / 액티브-스탠바이 무중단 이중화 Failover 지원"
+        ],
+        compliance: "국가정보원 CC인증, 전자정부 표준 프레임워크 호환성 검증",
+        trackRecord: "인천교통공사, 브라질 제조공장 MES L4 스위치 구축, 대형 포털 인프라"
+      },
+      ngfw: {
+        vendor: "시큐아이 (SECUI) · 엑스게이트",
+        badge: "방화벽 / 차세대 UTM",
+        title: "차세대 차단 방화벽 (NGFW) & 고성능 통합보안 UTM",
+        desc: "기존 IP/포트 중심의 방어 체계를 탈피하여 애플리케이션 계층(L7) 및 사용자 신원 기반으로 침입방지(IPS), 안티바이러스, 웹필터링을 단일 시스템으로 제공합니다.",
+        features: [
+          "멀티코어 분산 프로세싱 엔진을 통한 테라급 고성능 트래픽 인스펙션",
+          "사물인터넷(IoT) 장비 트래픽 이상징후 및 C&C 서버 통신 자동차단",
+          "전용 위협 인텔리전스 DB 실시간 자동 업데이트를 통한 신종 변종 랜섬웨어 방어",
+          "지사-본사 간 암호화 IPSec VPN 전용 가속 및 대역폭 QoS 제어"
+        ],
+        compliance: "CC인증 (EAL4), 보안기능확인서, 국가용 보안요구사항 만족",
+        trackRecord: "국군 9965/4284부대, 한국서부발전, 서울고속도로 인프라 유지관리"
+      },
+      secuguard: {
+        vendor: "나일소프트 (NileSOFT) · 나인시큐리티",
+        badge: "취약점 진단 / 보안감사",
+        title: "SecuGuard 상시 취약점 자동진단 및 컴플라이언스 감사 시스템",
+        desc: "복잡한 사내 정보 인프라(서버, DB, 네트워크 장비, 웹 애플리케이션)의 설정 결함과 취약점을 전수 검사하여 최적의 조치 리포트를 자동 발행합니다.",
+        features: [
+          "KISA 주요정보통신기반시설 기술적 취약점 분석평가 기준 100% 탑재",
+          "에이전트 / 에이전트리스 방식 동시 지원으로 무중단 안전 진단 보장",
+          "CVE 기반 최신 보안 위협 데이터베이스 상시 자동 동기화",
+          "조치 전/후 이행 점검 리포팅 및 감사 대응용 공인 보고서 자동 생성"
+        ],
+        compliance: "정보통신기반보호법, 전자금융감독규정, 개인정보보호법 안전성 기준 만족",
+        trackRecord: "한국가스공사, 한국농어촌공사, 법무부 교정청, 한밭대 진단 컨설팅 등"
+      },
+      compliance: {
+        vendor: "에스엠피플스 전문 컨설팅본부",
+        badge: "보안 인증 컨설팅",
+        title: "ISMS-P · CSAP 클라우드 인증 획득 종합 컨설팅",
+        desc: "공공 및 금융 부문 규제 준거성을 충족하고 국가 클라우드 서비스 보안인증(CSAP) 및 정보보호 관리체계(ISMS-P) 심사를 무결점으로 통과할 수 있도록 단계별 밀착 컨설팅을 제공합니다.",
+        features: [
+          "현행 관리적·물리적·기술적 보안 수준 정밀 Gap 분석 및 로드맵 수립",
+          "IaaS, SaaS, DaaS 유형별 CSAP 클라우드 필수 보안 요구사항 통제 항목 컨설팅",
+          "정보보호 지침서, 운영 절차서 제·개정 및 증적 자료 수집 가이드",
+          "KISA 및 심사기관의 서면·현장 실사 동행 지원 및 보완 조치 완료"
+        ],
+        compliance: "KISA ISMS-P 인증 기준, 과기부 CSAP 클라우드 보안인증 기준",
+        trackRecord: "범정부 연구비통합관리시스템, 공공 클라우드 SaaS 도입 기업 다수"
+      },
+      privacy_dlp: {
+        vendor: "소만사 (SOMANSA)",
+        badge: "데이터 보안 / 개인정보보호",
+        title: "엔드포인트 DLP & DB 개인정보보호 시스템",
+        desc: "사내 모든 단말기와 데이터베이스에 저장된 민감정보를 암호화하고, 이동식 저장매체나 이메일, 웹 업로드를 통한 외부 유출을 원천 통제합니다.",
+        features: [
+          "엔드포인트 내 주민번호, 여권번호, 카드번호 등 개인정보 패턴 자동 검출",
+          "USB, 외장하드, 블루투스 차단 및 전송 파일 강제 암호화",
+          "인쇄물 개인정보 마스킹 및 워터마크 출력 강제화",
+          "DB 접근제어 및 SQL 감사 로그의 위변조 방지 보관"
+        ],
+        compliance: "개인정보보호법 제29조 안전조치의무, 행정안전부 고시 완벽 충족",
+        trackRecord: "한국연구재단 개인정보보호조치시스템 유지관리, 금융 및 기업 고객사"
+      },
+      sdn_iot: {
+        vendor: "아토리서치 · 아라드네트웍스",
+        badge: "SDN / 가상화 보안",
+        title: "SDN 소프트웨어정의 네트워크 & 지능형 IoT 보안 솔루션",
+        desc: "스마트시티, 지능형 홈네트워크, 스마트 팩토리 등 분산된 IoT 장치 간의 네트워크를 세분화하여 특정 단말이 해킹되더라도 전체 망으로의 확산을 원천 차단합니다.",
+        features: [
+          "네트워크 마이크로 세그멘테이션(Micro-Segmentation) 기반 단말 간 격리",
+          "SDN 컨트롤러를 통한 물리적 네트워크 토폴로지의 동적 소프트웨어 제어",
+          "CCTV 영상 데이터의 전송 구간 암호화 및 비인가 영상 유출 차단",
+          "스마트빌딩 월패드 및 도어락 단말의 세대 간 망분리 표준 충족"
+        ],
+        compliance: "지능형 홈네트워크 설비 설치 및 기술기준(망분리 의무화) 충족",
+        trackRecord: "스마트시티 시범단지, 대규모 산업단지 제조 MES 스마트 인프라"
+      }
+    };
+
+    // Open Modal
+    function openSolutionDetail(key) {
+      const data = solutionDetails[key];
+      if (!data) return;
+
+      const modal = document.getElementById('solutionModal');
+      const content = document.getElementById('modalContent');
+
+      content.innerHTML = `
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-semibold">${data.badge}</span>
+          <span class="text-xs font-mono text-slate-400">파트너 벤더: ${data.vendor}</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">${data.title}</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-6 bg-slate-900/60 p-4 rounded-xl border border-slate-800">${data.desc}</p>
+        
+        <div class="mb-6">
+          <h4 class="text-sm font-bold text-cyan-400 mb-3 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> 핵심 기능 및 아키텍처
+          </h4>
+          <ul class="text-xs text-slate-300 space-y-2.5">
+            ${data.features.map(f => `<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0"></span><span>${f}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-[11px] font-mono text-slate-400 mb-1">인증 및 준거성</div>
+            <div class="text-xs text-slate-200 font-medium">${data.compliance}</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+            <div class="text-[11px] font-mono text-slate-400 mb-1">주요 구축 실적</div>
+            <div class="text-xs text-slate-200 font-medium">${data.trackRecord}</div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs text-slate-400">기술 문의: <strong class="text-cyan-400 font-mono">tech@smpeoples.kr</strong></span>
+          <a href="#contact" onclick="closeSolutionModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs text-center transition-all">
+            해당 솔루션 견적 / 도입 문의
+          </a>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    // Close Modal
+    function closeSolutionModal() {
+      document.getElementById('solutionModal').classList.add('hidden');
+    }
+
+    // Close modal on background click
+    document.getElementById('solutionModal').addEventListener('click', (e) => {
+      if (e.target.id === 'solutionModal') {
+        closeSolutionModal();
+      }
+    });
+
+    // Location Switcher (HQ vs Branch)
+    function switchLocation(target) {
+      const hqView = document.getElementById('hqView');
+      const branchView = document.getElementById('branchView');
+      const tabHQ = document.getElementById('tabHQ');
+      const tabBranch = document.getElementById('tabBranch');
+
+      if (target === 'hq') {
+        hqView.classList.remove('hidden');
+        hqView.classList.add('grid');
+        branchView.classList.add('hidden');
+        branchView.classList.remove('grid');
+
+        tabHQ.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-cyan-500 text-slate-950 shadow';
+        tabBranch.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition-all';
+      } else {
+        branchView.classList.remove('hidden');
+        branchView.classList.add('grid');
+        hqView.classList.add('hidden');
+        hqView.classList.remove('grid');
+
+        tabBranch.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-sky-500 text-slate-950 shadow';
+        tabHQ.className = 'px-6 py-2.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition-all';
+      }
+    }
+
+    // Address Copy Function
+    function copyAddress(type) {
+      const textToCopy = type === 'hq' 
+        ? "경기 고양시 덕양구 청초로 66 B동 1619, 1607호 (덕은리버워크)"
+        : "대전시 대덕구 대화동 611 가온비즈타워 1124호";
+
+      const dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = textToCopy;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+
+      if (type === 'hq') {
+        const msg = document.getElementById('copyHQMsg');
+        const orig = msg.innerText;
+        msg.innerText = "✓ 본사 주소가 복사되었습니다!";
+        setTimeout(() => { msg.innerText = orig; }, 2500);
+      } else {
+        const msg = document.getElementById('copyBranchMsg');
+        const orig = msg.innerText;
+        msg.innerText = "✓ 지사 주소가 복사되었습니다!";
+        setTimeout(() => { msg.innerText = orig; }, 2500);
+      }
+    }
+
+    // Inquiry form submission handler
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('formSuccessAlert');
+      alertBox.classList.remove('hidden');
+      e.target.reset();
+      
+      // Auto scroll to confirmation message
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
